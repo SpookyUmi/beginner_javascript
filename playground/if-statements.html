@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>If Statements</title>
+  <link rel="stylesheet" href="../base.css">
+</head>
+
+<body>
+
+  <h2>Truthy Values</h2>
+  * 1
+  * -10
+  * full string
+  * a string of "0"
+  * empty array
+  * empty object
+
+  <h2>Falsy Values</h2>
+  * 0
+  * undefined variable
+  * Variable set to null
+  * a variable set to `"hello" - 10` NaN
+  * empty string
+
+  <script>
+    function slugify(sentence, lowercase) {
+      const slug = sentence.replace(/\s/g, '-');
+      if (lowercase) {
+        return slug.toLowerCase();
+      }
+      return slug;
+    }
+
+    const name = 'umi';
+    const last = 'spooky';
+
+    if (name === 'kos' || (name === 'umi' && last === 'spooky')) {
+      console.log('Coooool name !');
+    }
+
+    const isAwesomeName = 'awesumi'.includes(name);
+    if (isAwesomeName) {
+      console.log('SUPER COOL AWESOME NAME');
+    }
+
+    function nameIsAwesome(name) {
+      return 'awesome'.includes(name);
+    }
+
+    if (nameIsAwesome('wes')) {
+      console.log('Cool name Wes');
+    }
+
+    const score = {};
+
+    if (score) {
+      console.log('There is a score already');
+    } else {
+      console.log('No score yet');
+    }
+
+    const values = [
+      [],
+      {},
+      -10,
+      1,
+      0,
+      '',
+      'full string',
+      ' ',
+      undefined,
+      NaN,
+      null,
+    ];
+
+    console.group('truthy or falsy values');
+    values.forEach(value => {
+      if (value) {
+        console.log(value, 'is truthy');
+      } else {
+        console.log(value, 'is falsy');
+      }
+    });
+    console.groupEnd();
+
+    console.clear();
+
+    // ternary
+    const count = 761;
+    /* let word;
+        if (count === 1) {
+          word = 'item';
+        } else {
+          word = 'items';
+        } */
+
+    // 1. Condition
+    // 2. What to do if true
+    // 3. What to do if false
+    const word = count === 1 ? 'item' : 'items';
+    const sentence = `You have ${count} item${count === 1 ? '' : 's'} in your cart`;
+    console.log(sentence);
+
+    function showAdminBar() {
+      console.log('lalala');
+    }
+    const isAdmin = false;
+    isAdmin ? showAdminBar() : null;
+
+    // And And trick !
+    function check1() {
+      console.log('Running check1');
+      return true;
+    }
+
+    function check2() {
+      console.log('Running check2');
+      return false;
+    }
+
+    function check3() {
+      console.log('Running check3');
+      return true;
+    }
+
+    if (check1() && check2() && check3()) {
+      console.log('You shall pass');
+    } else {
+      console.log('Some shall not pass');
+    }
+
+    // isAdmin ? showAdminBar() : null;
+    isAdmin && showAdminBar();
+
+    if (isAdmin) {
+      showAdminBar();
+    }
+  </script>
+</body>
+
+</html>

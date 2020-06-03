@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="../base.css">
+</head>
+
+<body>
+  <input type="text" name="first" value="umi">
+
+  <script src="https://unpkg.com/lodash"></script>
+  <script>
+    const age = 100;
+    const umi = {
+      age,
+      name: 'umi',
+      propertyToCheck: 'NEVER',
+      'cool-dude': true,
+      'really cool': false,
+      '777': true,
+      cat: 'azuki',
+      clothing: {
+        shirts: 10,
+        pants: 2,
+      },
+      sayHello(greeting = 'Hey') {
+        return `${greeting} ${this.name}`;
+      },
+    };
+
+    umi.job = 'Web Developer';
+    umi.age = 50;
+
+    console.log(umi.age);
+    // const propertyToCheck = prompt('What do you want to check ?');
+    // console.log(propertyToCheck);
+    // console.log(umi[propertyToCheck]);
+
+    const nameInput = document.querySelector('[name="first"]');
+
+    const name = nameInput ? nameInput.value : '';
+
+    console.log(name);
+
+    console.log(delete umi.job);
+
+    const nameOne = 'wes';
+    const nameTwo = 'wes';
+  </script>
+</body>
+
+</html>
