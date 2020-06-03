@@ -100,13 +100,29 @@
 
     // Display all bun types with " or " - use join()
 
-    // We have a string "hot dogs,hamburgers,sausages,corn" - use split() to turn it into a string
+    console.log(buns.join(' or '));
+    // result = 'egg or wonder or brioche'
+
+    // We have a string "hot dogs,hamburgers,sausages,corn" - use split() to turn it into an array
+
+    const foodString = 'hot dogs,hamburgers,sausages,corn';
+    console.log(foodString.split(','));
 
     // take the last item off toppings with pop()
+    const lastItem = toppings.pop();
+    console.log(lastItem);
     // add it back with push()
+    const addItem = toppings.push(lastItem);
+    console.log(addItem);
     // take the first item off toppings with shift()
+    const firstItem = toppings.shift();
+    console.log(firstItem);
     // add it back in with unshift()
+    const random = toppings.unshift(firstItem);
     // Do the last four,but immutable (with spreads and new variables)
+    let newToppings = toppings.slice(0, toppings.length - 1);
+    newToppings = [...newToppings, toppings[toppings.length - 1]];
+    console.log(newToppings);
 
     // Make a copy of the toppings array with slice()
     // Make a copy of the toppings array with a spread
