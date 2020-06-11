@@ -153,6 +153,48 @@
       }
     }
     toppings.forEach(logTopping);
+
+    // Map, Filter, Reduce
+
+    console.clear();
+
+    function addArms(face) {
+      return `👋 ${face} 👋`;
+    }
+
+    const toys = faces.map(addArms);
+
+    // console.log(toys);
+
+    function azukify(name) {
+      return `${name} azukon`;
+    }
+
+    function capitalize(word) {
+      return word[0].toUpperCase() + word.slice(1);
+    }
+    const fullNames = ['umi', 'kos', 'azuki'].map(capitalize).map(azukify);
+    // console.log(fullNames);
+
+    const orderTotalsWithTax = orderTotals.map(total => total * 8);
+    // console.log(orderTotalsWithTax);
+
+    const cleanPeople = people.map(function (person) {
+      console.log(person);
+      // get their birthday
+      console.log(person.birthday);
+      // figure out how old they are
+      const birthday = new Date(person.birthday);
+      const now = Date.now();
+      const age = Math.floor((now - birthday) / 31536000000);
+      // return their full name and bday in an object
+      const yolo = {
+        fullname: `${person.names.first} ${person.names.last}`,
+        bday: age,
+      };
+      return yolo;
+    });
+    console.log(cleanPeople);
   </script>
 </body>
 
