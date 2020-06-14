@@ -195,6 +195,16 @@
       return yolo;
     });
     console.log(cleanPeople);
+
+    const over40 = cleanPeople.filter(
+      person => person.bday > 30 && person.bday < 50
+    );
+    console.log('this person is', over40);
+
+    console.clear();
+
+    const student = students.find(name => name.last_name === 'Emilien');
+    console.log(student);
   </script>
 </body>
 
